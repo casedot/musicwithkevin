@@ -2,6 +2,8 @@
 
 @import "custom";
 
+$link-color:            map-get($theme-colors, "primary");
+$link-hover-color:      $black;
 
 body {
         @include media-breakpoint-up(xs) {
@@ -10,3 +12,31 @@ body {
                  background-size: cover;
          }
      }
+
+
+
+.banner_container .navbar {
+        align-items: start;
+
+        .navbar-brand {
+                @include media-breakpoint-up(md) {
+                        width: 290px;
+                }
+                @include media-breakpoint-up(lg) {
+                        width: 420px;
+                }
+        }
+
+        .navbar-nav .nav-item {
+                margin: .5rem;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+                font-family: $headings-font-family;
+
+                &.navi-button {
+                        padding: .5rem 2rem;
+                        border: solid 1px;
+                }
+        }
+}
