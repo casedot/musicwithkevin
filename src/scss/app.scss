@@ -1,23 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Shrikhand');
-
 @import "custom";
-
-$link-color:            map-get($theme-colors, "primary");
-$link-hover-color:      $black;
-
+// $link-color:            map-get($theme-colors, "primary");
 body {
         @include media-breakpoint-up(xs) {
-                 background: url('../../images/blue-guitar.jpg') bottom right no-repeat;
-                 background-attachment: fixed;
-                 background-size: cover;
-         }
-     }
+                background: url('../../images/blue-guitar.jpg') bottom right no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+        }
+}
 
-
+// a {
+//         font-weight: bold;
+//         border-bottom: solid 4px transparent;
+//         &:hover {
+//                 color: $link-color;
+//                 border-color: #fff;
+//         }
+// }
 
 .banner_container .navbar {
         align-items: start;
-
         .navbar-brand {
                 @include media-breakpoint-up(md) {
                         width: 290px;
@@ -25,18 +27,42 @@ body {
                 @include media-breakpoint-up(lg) {
                         width: 420px;
                 }
-        }
 
+                & svg .cls-1,
+                & svg .cls-2 {
+                        fill: #fff;
+                }
+
+                &:hover svg .cls-1,
+                &:hover svg .cls-2 {
+                        fill: #00636a;
+                }
+        }
         .navbar-nav .nav-item {
                 margin: .5rem;
         }
-
         .navbar-nav .nav-item .nav-link {
-                font-family: $headings-font-family;
+                font-family: $headings-font-family;                
 
                 &.navi-button {
                         padding: .5rem 2rem;
                         border: solid 1px;
+                }
+        }
+}
+
+.footer-container {
+        @include make-container();
+        position: relative;
+        text-align: right;
+        ul {
+                @include make-row();
+                list-style: none;
+                padding: 0;
+                font-size: $font-size-sm;
+                li {
+                        @include make-col-ready();
+                        @include make-col(12);
                 }
         }
 }

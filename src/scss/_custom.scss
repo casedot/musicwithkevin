@@ -4,8 +4,12 @@ $font-family-sans-serif:      "Montserrat", -apple-system, BlinkMacSystemFont, "
 $headings-font-family:        "Shrikhand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 $theme-colors: (
-  primary: #00636A
+  primary: #fff,
+  secondary: #00636A
 );
+
+$link-hover-color: #00636A;
+$link-hover-decoration: none;
 
 // Bootstrap source
 @import "../../node_modules/bootstrap/scss/bootstrap";
