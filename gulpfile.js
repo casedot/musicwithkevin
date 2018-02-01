@@ -62,6 +62,7 @@ gulp.task('start', ['sass'], function() {
     });
 
     gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], ['sass']);
+    gulp.watch(['src/js/custom/*.js'], ['js']);
     gulp.watch("*.php").on('change', browserSync.reload);
 });
 
