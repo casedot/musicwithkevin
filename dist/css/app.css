@@ -61,7 +61,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #00636A;
   text-align: left;
   background-color: #fff; }
 
@@ -2495,7 +2495,7 @@ tbody.collapse.show {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 1rem;
-  color: #212529;
+  color: #00636A;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -4069,7 +4069,7 @@ tbody.collapse.show {
     text-decoration: none;
     background-color: #f8f9fa; }
   .list-group-item-action:active {
-    color: #212529;
+    color: #00636A;
     background-color: #e9ecef; }
 
 .list-group-item {
@@ -4568,7 +4568,7 @@ button.close {
 
 .popover-body {
   padding: 0.5rem 0.75rem;
-  color: #212529; }
+  color: #00636A; }
 
 .carousel {
   position: relative; }
@@ -6990,6 +6990,15 @@ body {
       padding: .5rem 2rem;
       border: solid 1px; }
 
+.main-container {
+  width: 420px;
+  margin: 2.5rem; }
+  .main-container a {
+    font-weight: bold;
+    border-bottom: solid 4px transparent; }
+    .main-container a:hover {
+      border-color: #00636A; }
+
 .footer-container {
   width: 100%;
   padding-right: 15px;
@@ -7019,5 +7028,36 @@ body {
           -ms-flex: 0 0 100%;
               flex: 0 0 100%;
       max-width: 100%; }
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  -webkit-transition: 0.25s;
+  transition: 0.25s; }
+
+.overlay.open {
+  width: 100%; }
+
+.overlay-container {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px; }
+
+.overlay .close-button {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  font-size: 2.5rem;
+  color: #00636A; }
+  .overlay .close-button:hover {
+    color: #000; }
 
 /*# sourceMappingURL=app.css.map */
