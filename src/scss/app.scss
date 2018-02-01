@@ -2,8 +2,14 @@
 @import "custom";
 // $link-color:            map-get($theme-colors, "primary");
 body {
-        @include media-breakpoint-up(xs) {
-                background: url('../../images/blue-guitar.jpg') bottom right no-repeat;
+        @include media-breakpoint-up(xs) {                
+                background: rgb(76,197,206);
+                background-image: url('../../images/blue-guitar.jpg');
+                background-image:  url('../../images/blue-guitar.jpg'), -moz-radial-gradient(center, ellipse cover, rgba(92,245,253,1) 0%, rgba(80,201,210,1) 100%);
+                background-image: url('../../images/blue-guitar.jpg'), -webkit-radial-gradient(center, ellipse cover, rgba(92,245,253,1) 0%,rgba(80,201,210,1) 100%);
+                background-image: url('../../images/blue-guitar.jpg'), radial-gradient(ellipse at center, rgba(92,245,253,1) 0%,rgba(80,201,210,1) 100%);
+                background-position: bottom right;
+                background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
         }
