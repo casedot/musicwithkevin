@@ -57,6 +57,20 @@ body {
         }
 }
 
+.main-container {
+        width: 420px;
+        margin: 2.5rem;
+
+        a {
+                font-weight: bold;
+                border-bottom: solid 4px transparent;
+
+                &:hover {
+                        border-color: $link-hover-color;
+                }
+        }
+}
+
 .footer-container {
         @include make-container();
         position: relative;
@@ -72,3 +86,38 @@ body {
                 }
         }
 }
+
+.overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: 0.25s;
+    }
+    .overlay.open {
+            width: 100%;
+    }
+    
+    .overlay-container {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .overlay .close-button {
+        position: absolute;
+        top: 2rem;
+        right: 2.5rem;
+        font-size: 2.5rem;
+        color: $link-hover-color;
+
+        &:hover {
+                color: #000;
+        }
+    }
