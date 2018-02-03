@@ -2,16 +2,19 @@
 @import "custom";
 // $link-color:            map-get($theme-colors, "primary");
 body {
-        @include media-breakpoint-up(xs) {                
-                background: rgb(76,197,206);
+        @include media-breakpoint-up(xs) {
+                background: rgb(76, 197, 206);
                 background-image: url('../../images/blue-guitar.jpg');
-                background-image:  url('../../images/blue-guitar.jpg'), -moz-radial-gradient(center, ellipse cover, rgba(92,245,253,1) 0%, rgba(80,201,210,1) 100%);
-                background-image: url('../../images/blue-guitar.jpg'), -webkit-radial-gradient(center, ellipse cover, rgba(92,245,253,1) 0%,rgba(80,201,210,1) 100%);
-                background-image: url('../../images/blue-guitar.jpg'), radial-gradient(ellipse at center, rgba(92,245,253,1) 0%,rgba(80,201,210,1) 100%);
+                background-image: url('../../images/blue-guitar.jpg'), -moz-radial-gradient(center, ellipse farthest-corner, rgba(92, 245, 253, 1) 0%, rgba(80, 201, 210, 1) 100%);
+                background-image: url('../../images/blue-guitar.jpg'), -webkit-radial-gradient(center, ellipse farthest-corner, rgba(92, 245, 253, 1) 0%, rgba(80, 201, 210, 1) 100%);
+                background-image: url('../../images/blue-guitar.jpg'), radial-gradient(ellipse at center, rgba(92, 245, 253, 1) 0%, rgba(80, 201, 210, 1) 100%);
                 background-position: bottom right;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
+        }
+        a {
+                transition: all .3s;
         }
 }
 
@@ -23,7 +26,6 @@ body {
 //                 border-color: #fff;
 //         }
 // }
-
 .banner_container .navbar {
         align-items: start;
         .navbar-brand {
@@ -33,23 +35,72 @@ body {
                 @include media-breakpoint-up(lg) {
                         width: 420px;
                 }
-
                 & svg .cls-1,
                 & svg .cls-2 {
+                        stroke: #fff;
                         fill: #fff;
+                        fill-opacity: 0;
+                        stroke-width: 2;
+                        stroke-dasharray: 1600;
+                        stroke-dashoffset: 1600;
+                        -moz-animation: DASH3 1.5s ease-in-out 1s forwards;
+                        -webkit-animation: DASH3 1.5s ease-in-out 1s forwards;
+                        animation: DASH3 1.5s ease-in-out 1s forwards;
                 }
-
                 &:hover svg .cls-1,
                 &:hover svg .cls-2 {
                         fill: #00636a;
+                        stroke: #00636a;
+                        transition: all .3s;
+                }
+                @keyframes DASH3 {
+                        0% {
+                                stroke-dashoffset: 1600;
+                        }
+                        50% {
+                                fill-opacity: 0;
+                        }
+                        80% {
+                                stroke-dashoffset: 0;
+                                
+                        }
+                        100% {
+                                stroke-dashoffset: 0;
+                                fill-opacity: 1;
+                        }
+                }
+                @-webkit-keyframes DASH3 {
+                        0% {
+                                stroke-dashoffset: 1600;
+                        }
+                        80% {
+                                stroke-dashoffset: 0;
+                                fill-opacity: 0;
+                        }
+                        100% {
+                                stroke-dashoffset: 0;
+                                fill-opacity: 1;
+                        }
+                }
+                @-moz-keyframes DASH3 {
+                        0% {
+                                stroke-dashoffset: 1600;
+                        }
+                        80% {
+                                stroke-dashoffset: 0;
+                                fill-opacity: 0;
+                        }
+                        100% {
+                                stroke-dashoffset: 0;
+                                fill-opacity: 1;
+                        }
                 }
         }
         .navbar-nav .nav-item {
                 margin: .5rem;
         }
         .navbar-nav .nav-item .nav-link {
-                font-family: $headings-font-family;                
-
+                font-family: $headings-font-family;
                 &.navi-button {
                         padding: .5rem 2rem;
                         border: solid 1px;
@@ -60,11 +111,9 @@ body {
 .main-container {
         width: 420px;
         margin: 2.5rem;
-
         a {
                 font-weight: bold;
                 border-bottom: solid 4px transparent;
-
                 &:hover {
                         border-color: $link-hover-color;
                 }
@@ -97,27 +146,27 @@ body {
         background-color: #fff;
         overflow-x: hidden;
         transition: 0.25s;
-    }
-    .overlay.open {
-            width: 100%;
-    }
-    
-    .overlay-container {
+}
+
+.overlay.open {
+        width: 100%;
+}
+
+.overlay-container {
         position: relative;
         top: 10%;
         width: 100%;
         text-align: center;
         margin-top: 30px;
-    }
+}
 
-    .overlay .close-button {
+.overlay .close-button {
         position: absolute;
         top: 2rem;
         right: 2.5rem;
         font-size: 2.5rem;
         color: $link-hover-color;
-
         &:hover {
                 color: #000;
         }
-    }
+}
