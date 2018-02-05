@@ -41,11 +41,11 @@ body {
                         fill: #fff;
                         fill-opacity: 0;
                         stroke-width: 2;
-                        stroke-dasharray: 1600;
-                        stroke-dashoffset: 1600;
-                        -moz-animation: DASH3 1.5s ease-in-out 1s forwards;
-                        -webkit-animation: DASH3 1.5s ease-in-out 1s forwards;
-                        animation: DASH3 1.5s ease-in-out 1s forwards;
+                        stroke-dasharray: 1505;
+                        stroke-dashoffset: 1505;
+                        -moz-animation: DASH3 1.5s ease-out 1s forwards;
+                        -webkit-animation: DASH3 1.5s ease-out 1s forwards;
+                        animation: DASH3 1.5s ease-out 1s forwards;
                 }
                 &:hover svg .cls-1,
                 &:hover svg .cls-2 {
@@ -55,14 +55,13 @@ body {
                 }
                 @keyframes DASH3 {
                         0% {
-                                stroke-dashoffset: 1600;
+                                stroke-dashoffset: 1505;
                         }
-                        50% {
+                        40% {
                                 fill-opacity: 0;
                         }
                         80% {
                                 stroke-dashoffset: 0;
-                                
                         }
                         100% {
                                 stroke-dashoffset: 0;
@@ -71,11 +70,13 @@ body {
                 }
                 @-webkit-keyframes DASH3 {
                         0% {
-                                stroke-dashoffset: 1600;
+                                stroke-dashoffset: 1505;
+                        }
+                        40% {
+                                fill-opacity: 0;
                         }
                         80% {
                                 stroke-dashoffset: 0;
-                                fill-opacity: 0;
                         }
                         100% {
                                 stroke-dashoffset: 0;
@@ -84,11 +85,13 @@ body {
                 }
                 @-moz-keyframes DASH3 {
                         0% {
-                                stroke-dashoffset: 1600;
+                                stroke-dashoffset: 1505;
+                        }
+                        40% {
+                                fill-opacity: 0;
                         }
                         80% {
                                 stroke-dashoffset: 0;
-                                fill-opacity: 0;
                         }
                         100% {
                                 stroke-dashoffset: 0;
@@ -97,14 +100,15 @@ body {
                 }
         }
         .navbar-nav .nav-item {
-                margin: .5rem;
+                margin: 2.5rem;
         }
         .navbar-nav .nav-item .nav-link {
                 font-family: $headings-font-family;
                 &.navi-button {
                         padding: .5rem 2rem;
-                        border: solid 1px;
+                        border: solid 1px;                        
                 }
+
         }
 }
 
@@ -116,6 +120,15 @@ body {
                 border-bottom: solid 4px transparent;
                 &:hover {
                         border-color: $link-hover-color;
+                }
+        }
+        ul {
+                list-style: none;
+                li {
+                        width: 3rem;
+                        svg * {
+                                fill: $link-hover-color;
+                        }
                 }
         }
 }
@@ -146,27 +159,34 @@ body {
         background-color: #fff;
         overflow-x: hidden;
         transition: 0.25s;
-}
 
-.overlay.open {
-        width: 100%;
-}
-
-.overlay-container {
-        position: relative;
-        top: 10%;
-        width: 100%;
-        text-align: center;
-        margin-top: 30px;
-}
-
-.overlay .close-button {
-        position: absolute;
-        top: 2rem;
-        right: 2.5rem;
-        font-size: 2.5rem;
-        color: $link-hover-color;
-        &:hover {
-                color: #000;
+        &.open {
+                width: 100%;
+        }
+        
+        .overlay-container {
+                position: relative;
+                top: 10%;
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+        }
+        
+        h2 {
+                position: absolute;
+                top: 2rem;
+                left: 2.5rem;
+                color: $link-hover-color;
+        }
+        
+        .close-button {
+                position: absolute;
+                top: 1rem;
+                right: 2.5rem;
+                font-size: 2.5rem;
+                color: $link-hover-color;
+                &:hover {
+                        color: #000;
+                }
         }
 }
