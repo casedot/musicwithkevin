@@ -4,6 +4,17 @@
 body {
         @include media-breakpoint-up(xs) {
                 background: rgb(76, 197, 206);
+                background-image: url('../../images/blue-guitar_m.jpg');
+                background-image: url('../../images/blue-guitar_m.jpg'), -moz-radial-gradient(center, ellipse farthest-corner, rgba(92, 245, 253, 1) 0%, rgba(80, 201, 210, 1) 100%);
+                background-image: url('../../images/blue-guitar_m.jpg'), -webkit-radial-gradient(center, ellipse farthest-corner, rgba(92, 245, 253, 1) 0%, rgba(80, 201, 210, 1) 100%);
+                background-image: url('../../images/blue-guitar_m.jpg'), radial-gradient(ellipse at center, rgba(92, 245, 253, 1) 0%, rgba(80, 201, 210, 1) 100%);
+                background-position: bottom right;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+        }
+        @include media-breakpoint-up(lg) {
+                background: rgb(76, 197, 206);
                 background-image: url('../../images/blue-guitar.jpg');
                 background-image: url('../../images/blue-guitar.jpg'), -moz-radial-gradient(center, ellipse farthest-corner, rgba(92, 245, 253, 1) 0%, rgba(80, 201, 210, 1) 100%);
                 background-image: url('../../images/blue-guitar.jpg'), -webkit-radial-gradient(center, ellipse farthest-corner, rgba(92, 245, 253, 1) 0%, rgba(80, 201, 210, 1) 100%);
@@ -13,6 +24,7 @@ body {
                 background-attachment: fixed;
                 background-size: cover;
         }
+
         a {
                 transition: all .3s;
         }
@@ -28,7 +40,21 @@ body {
 // }
 .banner_container .navbar {
         align-items: start;
+
+        .banner_logo {
+                @include media-breakpoint-up(xs) {
+                        width: 100%;
+                }
+                @include media-breakpoint-up(md) {
+                        width: auto;
+                }
+        }
+
         .navbar-brand {
+                @include media-breakpoint-up(xs) {
+                        display: block;
+                        margin: 0 2.5rem 0 0;
+                }
                 @include media-breakpoint-up(md) {
                         width: 290px;
                 }
@@ -37,15 +63,20 @@ body {
                 }
                 & svg .cls-1,
                 & svg .cls-2 {
-                        stroke: #fff;
-                        fill: #fff;
-                        fill-opacity: 0;
-                        stroke-width: 2;
-                        stroke-dasharray: 1505;
-                        stroke-dashoffset: 1505;
-                        -moz-animation: DASH3 1.5s ease-out 1s forwards;
-                        -webkit-animation: DASH3 1.5s ease-out 1s forwards;
-                        animation: DASH3 1.5s ease-out 1s forwards;
+                        @include media-breakpoint-up(xs) {
+                                stroke: #fff;
+                                fill: #fff;
+                        }
+
+                        @include media-breakpoint-up(md) {
+                                fill-opacity: 0;
+                                stroke-width: 2;
+                                stroke-dasharray: 1505;
+                                stroke-dashoffset: 1505;
+                                -moz-animation: DASH3 1.5s ease-out 1s forwards;
+                                -webkit-animation: DASH3 1.5s ease-out 1s forwards;
+                                animation: DASH3 1.5s ease-out 1s forwards;
+                        }
                 }
                 &:hover svg .cls-1,
                 &:hover svg .cls-2 {
@@ -113,8 +144,17 @@ body {
 }
 
 .main-container {
-        width: 420px;
-        margin: 2.5rem;
+        @include media-breakpoint-up(xs) {
+                width: 70%;
+                margin: .5rem 4rem .5rem .5rem;
+                padding: .5rem;
+        }        
+        @include media-breakpoint-up(md) {
+                width: 420px;
+                margin: 2.5rem;
+                padding: .5rem;
+        }        
+
         a {
                 font-weight: bold;
                 border-bottom: solid 4px transparent;
@@ -125,7 +165,13 @@ body {
         ul {
                 list-style: none;
                 li {
-                        width: 3rem;
+                        @include media-breakpoint-up(xs) {
+                                width: 2.2rem;
+                        }
+                        @include media-breakpoint-up(md) {
+                                width: 3rem;
+                        }
+                        
                         svg * {
                                 fill: $link-hover-color;
                         }
