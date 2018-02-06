@@ -13,17 +13,23 @@ body {
                 background-attachment: fixed;
                 background-size: cover;
         }
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(sm) {
+                background-position: bottom right;
+        }        
+        @include media-breakpoint-up(md) {
                 background: rgb(76, 197, 206);
                 background-image: url('../../images/blue-guitar.jpg');
                 background-image: url('../../images/blue-guitar.jpg'), -moz-radial-gradient(center, ellipse farthest-corner, rgba(92, 245, 253, 1) 0%, rgba(80, 201, 210, 1) 100%);
                 background-image: url('../../images/blue-guitar.jpg'), -webkit-radial-gradient(center, ellipse farthest-corner, rgba(92, 245, 253, 1) 0%, rgba(80, 201, 210, 1) 100%);
                 background-image: url('../../images/blue-guitar.jpg'), radial-gradient(ellipse at center, rgba(92, 245, 253, 1) 0%, rgba(80, 201, 210, 1) 100%);
-                background-position: bottom right;
+                background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
         }
+        @include media-breakpoint-up(xl) {
+                background-position: bottom right;
+        }        
 
         a {
                 transition: all .3s;
@@ -55,6 +61,10 @@ body {
                         display: block;
                         margin: 0 2.5rem 0 0;
                 }
+
+                @include media-breakpoint-up(sm) {
+                        width: 70%;
+                }
                 @include media-breakpoint-up(md) {
                         width: 290px;
                 }
@@ -73,9 +83,9 @@ body {
                                 stroke-width: 2;
                                 stroke-dasharray: 1505;
                                 stroke-dashoffset: 1505;
-                                -moz-animation: DASH3 1.5s ease-out 1s forwards;
-                                -webkit-animation: DASH3 1.5s ease-out 1s forwards;
-                                animation: DASH3 1.5s ease-out 1s forwards;
+                                -moz-animation: DASH3 1.5s ease .25s forwards;
+                                -webkit-animation: DASH3 1.5s ease .25s forwards;
+                                animation: DASH3 1.5s ease .25s forwards;
                         }
                 }
                 &:hover svg .cls-1,
@@ -131,13 +141,34 @@ body {
                 }
         }
         .navbar-nav .nav-item {
-                margin: 2.5rem;
+                @include media-breakpoint-up(xs) {
+                        margin: 2rem 0 1rem;
+                }
+
+                @include media-breakpoint-up(sm) {
+                        margin: 2rem 0 1rem;
+                        width: 70%;
+                }
+
+                @include media-breakpoint-up(md) {
+                        margin: 2.5rem;
+                        width: auto;
+                }
+                
         }
         .navbar-nav .nav-item .nav-link {
                 font-family: $headings-font-family;
                 &.navi-button {
                         padding: .5rem 2rem;
-                        border: solid 1px;                        
+                        text-align: center;
+                        border-bottom: solid 2px $link-hover-color;
+                        background: $link-hover-color;
+                        background: $link-hover-color-transparent;
+
+                        &:hover {
+                                color: #fff;
+                                background: $link-hover-color;
+                        }
                 }
 
         }
@@ -179,10 +210,33 @@ body {
         }
 }
 
+footer {
+        @include media-breakpoint-up(xs) {                
+                position: relative;
+                right: initial;
+                bottom: initial;
+                left: initial;
+                z-index: $zindex-fixed;
+        }
+        @include media-breakpoint-up(md) {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                left: 0;
+        }
+        
+}
 .footer-container {
-        @include make-container();
-        position: relative;
-        text-align: right;
+        @include media-breakpoint-up(xs) {       
+                @include make-container();
+                position: relative;
+                text-align: left;
+        }
+        @include media-breakpoint-up(md) {       
+                text-align: right;
+        }
+        
+        
         ul {
                 @include make-row();
                 list-style: none;
