@@ -273,10 +273,21 @@ footer {
         }
         
         h2 {
-                position: absolute;
-                top: 2rem;
-                left: 2.5rem;
-                color: $link-hover-color;
+                @include media-breakpoint-up(xs) {  
+                        position: absolute;
+                        top: 1rem;
+                        left: 2rem;
+                        width: 74%;
+                        color: $link-hover-color;
+                }
+                @include media-breakpoint-up(md) {  
+                        position: absolute;
+                        top: 2rem;
+                        left: 2.5rem;
+                        width: auto;
+                        color: $link-hover-color;
+                }
+                
         }
         
         .close-button {
@@ -285,6 +296,7 @@ footer {
                 right: 2.5rem;
                 font-size: 2.5rem;
                 color: $link-hover-color;
+                z-index: 1090;
                 &:hover {
                         color: #000;
                 }
